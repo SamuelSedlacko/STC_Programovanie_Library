@@ -1,7 +1,7 @@
 import bodyParser, { json } from "body-parser"
 import express from "express"
-import { addBook } from "./endpoints/books/addbook"
-import { listOfBooks } from "./endpoints/books/list"
+import { addBook } from "./endpoints/booksoperations/addbook"
+import { listOfBooks } from "./endpoints/booksoperations/list"
 import { showLib } from "./endpoints/ShowLibraryEndpoint"
 const app = express()
 const port = 3000
