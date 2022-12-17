@@ -7,3 +7,15 @@ export type addedBook = { //parametre knihy
     countryOfPublish: string,
     numberOfPages: number,
 }
+
+export type registerType = {
+    name: string,
+    surname: string,
+    email: string,
+    password: string,
+}
+
+export type loginType = {
+    email: string,
+    password: string,
+}

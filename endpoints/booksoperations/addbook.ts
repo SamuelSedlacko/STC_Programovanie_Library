@@ -2,7 +2,7 @@ import { fstat } from "fs"
 import { addedBook } from "./contents"
 import { listOfBooks } from "./list"
 import fs from "fs"
-import { bookHash } from "./tohash"
+import { hashingmethod } from "./tohash"
 
 export const addBook = (req: any, res: any) => { //funkcia, ktora prida knihu do databazy
    const parameters = req.body
@@ -17,7 +17,7 @@ export const addBook = (req: any, res: any) => { //funkcia, ktora prida knihu do
 
          const bookJSONstr = JSON.stringify(parameters)
 
-         const hashedBookName = bookHash(parameters.name.toLowerCase().replace(" ", "") + parameters.author.toLowerCase().replace(" ", "") + parameters.genre.toLowerCase().replace(" ", "") + parameters.publisher.toLowerCase().replace(" ", ""))
+         const hashedBookName = hashingmethod(parameters.name.toLowerCase().replace(" ", "") + parameters.author.toLowerCase().replace(" ", "") + parameters.genre.toLowerCase().replace(" ", "") + parameters.publisher.toLowerCase().replace(" ", ""))
 
          if(!fs.existsSync("books")) {
             fs.mkdirSync("books");

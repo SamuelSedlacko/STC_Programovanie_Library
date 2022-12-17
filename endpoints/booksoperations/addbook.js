@@ -15,7 +15,7 @@ const addBook = (req, res) => {
             console.log(list_1.listOfBooks);
             res.sendStatus(200);
             const bookJSONstr = JSON.stringify(parameters);
-            const hashedBookName = (0, tohash_1.bookHash)(parameters.name.toLowerCase().replace(" ", "") + parameters.author.toLowerCase().replace(" ", "") + parameters.genre.toLowerCase().replace(" ", "") + parameters.publisher.toLowerCase().replace(" ", ""));
+            const hashedBookName = (0, tohash_1.hashingmethod)(parameters.name.toLowerCase().replace(" ", "") + parameters.author.toLowerCase().replace(" ", "") + parameters.genre.toLowerCase().replace(" ", "") + parameters.publisher.toLowerCase().replace(" ", ""));
             if (!fs_1.default.existsSync("books")) {
                 fs_1.default.mkdirSync("books");
             }
