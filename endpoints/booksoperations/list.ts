@@ -1,7 +1,8 @@
-import { addedBook } from "./contents";
+import { addedBook, registerType } from "./contents";
 import fs from "fs"
+import { loadBooklist } from "./loadBooks";
 
 
-const allTheBooks = fs.readdirSync("./books")
 
-export const listOfBooks: Array<allTheBooks> = [] //premenna, ktora v sebe obsahuje databazu knih
+export const listOfBooks: Array<addedBook>  = [] //premenna, ktora v sebe obsahuje databazu knih
+
