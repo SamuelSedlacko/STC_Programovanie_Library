@@ -4,10 +4,10 @@ import { akeys, listOfBooks } from "./list"
 import fs from "fs"
 import { hashingmethod } from "./tohash"
 
-export const addBook = (req: any, res: any) => { //funkcia, ktora prida knihu do databazy
+export const addBook = (req: any, res: any) => { 
    const parameters = req.body
    const authkey: authKey = parameters
-   function checkAtributes(bookAttributes: addedBook) {//funkcia, ktora overi, ci vsetky parametre knihy boli zadane, ak ano, kniha bude pushnuta do databazy, ak nie, upozorni, aby uzivatel skontroloval input
+   function checkAtributes(bookAttributes: addedBook) {
       if("name" in bookAttributes && "author" in bookAttributes && "genre" in bookAttributes && "yearOfPublish" in bookAttributes && "publisher" in bookAttributes && "countryOfPublish" in bookAttributes && "numberOfPages" in bookAttributes && "description" in bookAttributes) {
          listOfBooks.push(authkey.book)
 

@@ -1,4 +1,4 @@
-export type addedBook = { //parametre knihy
+export type addedBook = {
     name: string,
     author: string,
     genre: string,

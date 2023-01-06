@@ -19,19 +19,19 @@ const loadAllMyBooks: addedBook[] = loadBooklist()
 
 listOfBooks.push(...loadAllMyBooks)
 
-app.get('/', (req, res) => { // get metoda, privita pouzivatela
+app.get('/', (req, res) => { 
   res.send('Welcome to book library!\nIf you want to see your library, please go to /api/library/list.\n If you want to put a new book into your library, send a post request to /api/library/book/add')
 })
 
-app.post('/api/library/book/add', (req, res) => { //post metoda, pridava knihy do kniznice pomocou endpointu addBook
+app.post('/api/library/book/add', (req, res) => { 
   addBook(req, res)
 })
 
-app.post('/api/auth/register', (req, res) => { //post metoda, registracia uzivatela
+app.post('/api/auth/register', (req, res) => {
   userregister(req, res)
 })
 
-app.get('/api/library/list', (req, res) => { //get metoda, vypise kniznicu knih, ktore boli pridane, pomocou endpointu showlibraryendpoint
+app.get('/api/library/list', (req, res) => { 
   showLib(req, res)
 })
 
@@ -39,7 +39,7 @@ app.get('/api/library/filter', (req, res) => {
   searchFunction(req, res)
 })
 
-app.post('/api/auth/login', (req, res) => { //post metoda, registracia uzivatela
+app.post('/api/auth/login', (req, res) => { 
   loginfunction(req, res)
 })
 

@@ -1,5 +1,5 @@
 import { listOfBooks } from "./booksoperations/list"
 
-export const showLib = (req: any, res: any) => { //endpoint, ako response vypise kniznicu
+export const showLib = (req: any, res: any) => { 
     res.send(listOfBooks)
 }
