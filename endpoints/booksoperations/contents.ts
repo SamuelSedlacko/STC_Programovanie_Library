@@ -6,6 +6,7 @@ export type addedBook = { //parametre knihy
     publisher: string,
     countryOfPublish: string,
     numberOfPages: number,
+    description: string,
 }
 
 export type registerType = {
@@ -19,3 +20,14 @@ export type loginType = {
     email: string,
     password: string,
 }
+
+export type authKey = {
+    key: string,
+    book: addedBook,
+}
+
+export type searchT = {
+    type: string,
+    query: string,
+}
+
