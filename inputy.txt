@@ -1,0 +1,17 @@
+{
+  "key": "4de73b44-d434-4b93-a8d5-151122afa755",
+  "book" : {
+    "name":"Destination B1",
+    "author":"Malcolm Mann, Steve Taylore-Knowles",
+    "genre":"Study",
+    "yearOfPublish":"2008",
+    "publisher":"Macmillan",
+    "countryOfPublish":"Great Britain",
+    "numberOfPages":"300"
+  }
+}
+
+{
+  "email": "sedlacko@me.com",
+  "password":"kon1234"
+}

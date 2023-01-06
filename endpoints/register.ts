@@ -2,7 +2,7 @@ import {registerType } from "./booksoperations/contents";
 import fs from "fs"
 import { hashingmethod } from "./booksoperations/tohash";
 import { loadReg } from "./loadregistrations";
-import { registrations } from "./booksoperations/list";
+
 
 if(!fs.existsSync("users")) {
     fs.mkdirSync("users");

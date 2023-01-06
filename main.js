@@ -10,12 +10,13 @@ const list_1 = require("./endpoints/booksoperations/list");
 const loadBooks_1 = require("./endpoints/booksoperations/loadBooks");
 const ShowLibraryEndpoint_1 = require("./endpoints/ShowLibraryEndpoint");
 const register_1 = require("./endpoints/register");
+const login_1 = require("./endpoints/login");
+const searchendpoint_1 = require("./search/searchendpoint");
 const app = (0, express_1.default)();
 const port = 3000;
 app.use((0, body_parser_1.json)());
 const loadAllMyBooks = (0, loadBooks_1.loadBooklist)();
 list_1.listOfBooks.push(...loadAllMyBooks);
-console.log(list_1.registrations);
 app.get('/', (req, res) => {
     res.send('Welcome to book library!\nIf you want to see your library, please go to /api/library/list.\n If you want to put a new book into your library, send a post request to /api/library/book/add');
 });
@@ -27,6 +28,12 @@ app.post('/api/auth/register', (req, res) => {
 });
 app.get('/api/library/list', (req, res) => {
     (0, ShowLibraryEndpoint_1.showLib)(req, res);
+});
+app.get('/api/library/filter', (req, res) => {
+    (0, searchendpoint_1.searchFunction)(req, res);
+});
+app.post('/api/auth/login', (req, res) => {
+    (0, login_1.loginfunction)(req, res);
 });
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

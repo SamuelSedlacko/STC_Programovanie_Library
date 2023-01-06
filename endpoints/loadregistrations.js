@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.registrationfiles = exports.loadReg = void 0;
+exports.logindata = exports.registrationfiles = exports.loadReg = void 0;
 const fs_1 = __importDefault(require("fs"));
-const list_1 = require("./booksoperations/list");
+const tohash_1 = require("./booksoperations/tohash");
 const loadReg = () => {
     const files = fs_1.default.readdirSync("users/");
     console.log(files);
@@ -18,5 +18,10 @@ const registrationfiles = () => {
     return [];
 };
 exports.registrationfiles = registrationfiles;
-const registrationfiles1 = exports.registrationfiles.toString();
-list_1.registrations.push(...registrationfiles1);
+const logindata = (email, password) => {
+    const hashedemail = (0, tohash_1.hashingmethod)(email);
+    const hashedpassw = (0, tohash_1.hashingmethod)(password);
+    const hashsaltpass = (0, tohash_1.hashingmethod)(hashedpassw + hashedemail);
+    return [hashedemail, hashsaltpass];
+};
+exports.logindata = logindata;
