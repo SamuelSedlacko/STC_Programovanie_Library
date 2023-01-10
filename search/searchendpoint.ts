@@ -39,6 +39,7 @@ const byAuthor = (query: string): addedBook[] => {
             results.push(addedBook)
         }
     }
+    results.length = 5
     return results
 }
 
@@ -52,6 +53,7 @@ const byName = (query: string): addedBook[] => {
             results.push(addedBook)
         }
     }
+    results.length = 5
     return results
 }
 

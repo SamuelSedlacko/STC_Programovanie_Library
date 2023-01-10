@@ -29,6 +29,7 @@ const byAuthor = (query) => {
             results.push(addedBook);
         }
     }
+    results.length = 5;
     return results;
 };
 const byName = (query) => {
@@ -39,6 +40,7 @@ const byName = (query) => {
             results.push(addedBook);
         }
     }
+    results.length = 5;
     return results;
 };
 const byDescription = (query) => {
